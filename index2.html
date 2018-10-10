@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <title>Fly to a location based on scroll position</title>
+    <title></title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
@@ -13,137 +13,137 @@
 </head>
 <body>
 
-
 <style>
 #map {
     position: fixed;
-    width:50%;
+    width:65%;
 }
 #features {
-    width: 50%;
-    margin-left: 50%;
-    font-family: sans-serif;
+    width: 35%;
+    margin-left: 65%;
+    font-family: Arial;
     overflow-y: scroll;
-    background-color: #fafafa;
+    background-color: #0e1b29;
 }
 section {
     padding:  25px 50px;
     line-height: 25px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #23a8d3;
     opacity: 0.25;
-    font-size: 13px;
+    font-size: 20px;
 }
 section.active {
-    opacity: 1;
+    opacity: 0.75;
 }
 section:last-child {
     border-bottom: none;
-    margin-bottom: 200px;
+    margin-bottom: 1000px;
 }
+    .mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
 </style>
 
 <div id='map'></div>
 <div id='features'>
-    <section id='baker' class='active'>
-        <h3>221b Baker St.</h3>
-        <p>November 1895. London is shrouded in fog and Sherlock Holmes and Watson pass time restlessly awaiting a new case. "The London criminal is certainly a dull fellow," Sherlock bemoans. "There have been numerous petty thefts," Watson offers in response. Just then a telegram arrives from Sherlock's brother Mycroft with a mysterious case.</p>
+    <section id='welcome' class='active'>
+        <font color="#01cfff"><h3>Brewdog locations</h3><br>
+        <img src="https://github.com/egil1978/egil1978.github.io/blob/master/brewdog2.png?raw=true" style="width:40%;height:40%;"><br>
     </section>
-    <section id='aldgate'>
-        <h3>Aldgate Station</h3>
-        <p>Arthur Cadogan West was found dead, head crushed in on train tracks at Aldgate Station at 6AM Tuesday morning. West worked at Woolwich Arsenal on the Bruce-Partington submarine, a secret military project. Plans for the submarine had been stolen and seven of the ten missing papers were found in West's possession. Mycroft implores Sherlock to take the case and recover the three missing papers.</p>
+  
+    <section id='section1'>
+        <font color="#01cfff"><h4>1. Aberdeen</h4></font>
+        <img src="https://www.brewdog.com/images/cms/bars/1508756881IMG_9300.jpg" style="width:70%;height:70%;"><br>
+        <h6>In 2010, BrewDog opened their first bar in the owners home town of Aberdeen, 3 years after starting the company.</h6>
     </section>
-    <section id='london-bridge'>
-        <h3>London Bridge</h3>
-        <p>Holmes and Watson's investigations take them across London. Sherlock deduces that West was murdered elsewhere, then moved to Aldgate Station to create the illusion that he was crushed on the tracks by a train. On their way to Woolwich Sherlock dispatches a telegram to Mycroft at London Bridge: "Send list of all foreign spies known to be in England, with full address."</p>
+  
+  <section id='section2'>
+      <font color="#01cfff"><h4>2. Glasgow & Edinburgh</h4></font>
+        <h6>In 2011 BrewDog opened bars in Glasgow, Edinburgh, and a flagship London venue in Camden. In this year BrewDog also welcomed 5,000 new shareholders and raised £2.2m to continue growing their business.</h6>
     </section>
-    <section id='woolwich'>
-        <h3>Woolwich Arsenal</h3>
-        <p>While investigating at Woolwich Arsenal Sherlock learns that West did not have the three keys&mdash;door, office, and safe&mdash;necessary to steal the papers. The train station clerk mentions seeing an agitated West boarding the 8:15 train to London Bridge. Sherlock suspects West of following someone who had access to the Woolwich chief's keyring with all three keys.</p>
+    
+    <section id='section3'>
+        <font color="#01cfff"><h4>3. Ellon</h4></font>
+        <img src="https://www.brewdog.com/images/cms/blog/1483953878HotelCouncil_1.LEAD.jpg" style="width:70%;height:70%;"><br>
+        <h6>In 2012 they opened up a world class eco-brewery in Ellon which allowed them to grow revenues by 95%. In this year they also opened 6 new UK bars and launched Dead Pony Club.</h6>
     </section>
-    <section id='gloucester'>
-        <h3>Gloucester Road</h3>
-        <p>Mycroft responds to Sherlock's telegram and mentions several spies. Hugo Oberstein of 13 Caulfield Gardens catches Sherlock's eye. He heads to the nearby Gloucester Road station to investigate and learns that the windows of Caulfield Gardens open over rail tracks where trains stop frequently.</p>
+    
+    <section id='section4'>
+        <font color="#01cfff"><h4>4. York</h4></font>
+        <img src="https://www.brewdog.com/images/cms/bars/1481278340york1.jpg" style="width:70%;height:70%;"><br>
+        <h6>In 2016, Elvis Juice was born! BrewDog also opened 9 new bars from Berlin to York.</h6>
     </section>
-    <section id='caulfield-gardens'>
-        <h3>13 Caulfield Gardens</h3>
-        <p>Holmes deduces that the murderer placed West atop a stopped train at Caulfield Gardens. The train traveled to Aldgate Station before West's body finally toppled off. Backtracking to the criminal's apartment, Holmes finds a series of classified ads from <em>The Daily Telegraph</em> stashed away. All are under the name Pierrot: "Monday night after nine. Two taps. Only ourselves. Do not be so suspicious. Payment in hard cash when goods delivered."</p>
+    
+    <section id='section5'>
+        <font color="#01cfff"><h4>5. Clerkenwell</h4></font>
+        <img src="https://www.brewdog.com/images/cms/bars/1449830664ClerkenwellEdits12.jpg" style="width:70%;height:70%;"><br>
+        <h6>BrewDog now have 9 bars in London, including one in Clerkenwell, just around the corner from the Geovation Hub. Once you’re thirsty from map making, it’s a great place to grab a nice pint!</h6>
     </section>
-    <section id='telegraph'>
-        <h3>The Daily Telegraph</h3>
-        <p>Holmes and Watson head to The Daily Telegraph and place an ad to draw out the criminal. It reads: "To-night. Same hour. Same place. Two taps. Most vitally important. Your own safety at stake. Pierrot." The trap works and Holmes catches the criminal: Colonel Valentine Walter, the brother of Woolwich Arsenal's chief. He confesses to working for Hugo Oberstein to obtain the submarine plans in order to pay off his debts.</p>
+        
+        <section id='section6'>
+        <img src="http://snodnipper.github.io/os-zoomstack-masterclass/brand/ordnance_survey_white.png" style="width:40%;height:40%;"><br>
+         <font size="1">Contains OS data © Crown copyright and database rights 2018</font>
     </section>
-    <section id='charing-cross'>
-        <h3>Charing Cross Hotel</h3>
-        <p>Walter writes to Oberstein and convinces him to meet in the smoking room of the Charing Cross Hotel where he promises additional plans for the submarine in exchange for money. The plan works and Holmes and Watson catch both criminals.</p>
-        <small id="citation">
-            Adapted from <a href='http://www.gutenberg.org/files/2346/2346-h/2346-h.htm'>Project Gutenberg</a>
-        </small>
-    </section>
-</div>
+    
+  </div>
 <script>
-mapboxgl.accessToken = '<your access token here>';
-
+mapboxgl.accessToken = '';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
-    center: [-0.15591514, 51.51830379],
-    zoom: 15.5,
-    bearing: 27,
-    pitch: 45
-});
-
-var chapters = {
-    'baker': {
-        bearing: 27,
-        center: [-0.15591514, 51.51830379],
-        zoom: 15.5,
-        pitch: 20
-    },
-    'aldgate': {
-        duration: 6000,
-        center: [-0.07571203, 51.51424049],
-        bearing: 150,
-        zoom: 15,
+    style: 'https://alicjakarpinska.github.io/brewdog-map/style.json',
+        maxZoom: 16,
+        bearing: 0,
+        center: [-3.276136, 54.831588],
+        zoom: 6,
+        speed: 0.5,
+        pitch: 0
+    });
+    
+  var chapters = {
+    'welcome': {
+        bearing: 0,
+        center: [-3.276136, 54.831588],
+        zoom: 5.93,
+        speed: 0.5,
         pitch: 0
     },
-    'london-bridge': {
-        bearing: 90,
-        center: [-0.08533793, 51.50438536],
+    'section1': {
+        bearing: 0,
+        center: [-2.091948, 57.147483],
+        speed: 0.5,
         zoom: 13,
-        speed: 0.6,
-        pitch: 40
+        pitch: 0
     },
-    'woolwich': {
-        bearing: 90,
-        center: [0.05991101, 51.48752939],
-        zoom: 12.3
+    'section2': {
+        center: [-3.769885, 55.915518],
+        bearing: 0,
+        zoom: 8,
+        speed: 0.5,
+        pitch: 0
     },
-    'gloucester': {
-        bearing: 45,
-        center: [-0.18335806, 51.49439521],
-        zoom: 15.3,
-        pitch: 20,
+    'section3': {
+        bearing: 0,
+        center: [-2.054593, 57.370377],
+        zoom: 13,
+        speed: 0.5,
+        pitch: 0
+    },
+    'section4': {
+        bearing: 0,
+        center: [-1.091226, 53.955371],
+        zoom: 13,
+        speed: 0.5,
+        pitch: 0
+    },
+    'section5': {
+        bearing: 0,
+        center: [-0.103039, 51.522837],
+        zoom: 14,
+        pitch: 60,
         speed: 0.5
     },
-    'caulfield-gardens': {
-        bearing: 180,
-        center: [-0.19684993, 51.5033856],
-        zoom: 12.3
-    },
-    'telegraph': {
-        bearing: 90,
-        center: [-0.10669358, 51.51433123],
-        zoom: 17.3,
-        pitch: 40
-    },
-    'charing-cross': {
-        bearing: 90,
-        center: [-0.12416858, 51.50779757],
-        zoom: 14.3,
-        pitch: 20
-    }
 };
-
 // On every scroll event, check which element is on screen
 window.onscroll = function() {
     var chapterNames = Object.keys(chapters);
@@ -155,27 +155,19 @@ window.onscroll = function() {
         }
     }
 };
-
 var activeChapterName = 'baker';
 function setActiveChapter(chapterName) {
     if (chapterName === activeChapterName) return;
-
     map.flyTo(chapters[chapterName]);
-
     document.getElementById(chapterName).setAttribute('class', 'active');
     document.getElementById(activeChapterName).setAttribute('class', '');
-
     activeChapterName = chapterName;
 }
-
 function isElementOnScreen(id) {
     var element = document.getElementById(id);
     var bounds = element.getBoundingClientRect();
     return bounds.top < window.innerHeight && bounds.bottom > 0;
 }
-
 </script>
-
 </body>
 </html>
-
